@@ -11,3 +11,10 @@ O NLW é um evento online com muito código, desafios, networking e um único
 - Consumimiu a API com JSON, explicando o uso do Hook UseEffect
 - Gerou a build do projeto e fez a home do projeto de forma estática com o SSG, falando as diferenças entre comsumir os dados e mostralos com SPA, SSR e SSG
 
+## 3º DIA (AULA 03) - In Orbit
+- Neste dia, avançou bastante na estrutura da página
+- Mostrou como trabalhar com rotas dentro do Next.js e lidar com parâmetros nas rotas
+- Mostrou como fazer a formatação de dadoscom a integração do Typescript
+
+
+
