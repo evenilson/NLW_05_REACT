@@ -7,6 +7,8 @@ import { api } from "../services/api";
 import { convertDurationToTimeString } from "../utils/convertDurationToTimeString";
 
 import styles from './home.module.scss'
+import { useContext } from "react";
+import { PLayerContext } from "../contexts/PlayerContext";
 
 type Episode = {
   id: string,
@@ -26,10 +28,13 @@ type HomeProps = {
 }
 
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
+  const player = useContext(PLayerContext)
+
+
   return (
     <div className={styles.homepage}>
       <section className={styles.latestEpisodes}>
-        <h2> Últimos lançamentos </h2>
+        <h2> Últimos lançamentos {player}</h2>
 
         <ul>
           {
