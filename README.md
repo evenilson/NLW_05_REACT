@@ -16,5 +16,8 @@ O NLW é um evento online com muito código, desafios, networking e um único
 - Mostrou como trabalhar com rotas dentro do Next.js e lidar com parâmetros nas rotas
 - Mostrou como fazer a formatação de dadoscom a integração do Typescript
 
-
-
+## 4º DIA (AULA 04) - Landing
+- No quarto dia, mostrou como fazer geração estpatica dinâmica com Next,
+- Mostou como usar a Context API, como compartilhar informações entre vários componentes
+- Ensinou como trabalhar com a tag de aúdio
+- Trabalhou com os conceitos de Ref dentro do React
