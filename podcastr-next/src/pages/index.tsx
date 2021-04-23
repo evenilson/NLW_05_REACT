@@ -28,13 +28,13 @@ type HomeProps = {
 }
 
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
-  const player = useContext(PLayerContext)
+  const {  play } = useContext(PLayerContext)
 
 
   return (
     <div className={styles.homepage}>
       <section className={styles.latestEpisodes}>
-        <h2> Últimos lançamentos {player}</h2>
+        <h2> Últimos lançamentos </h2>
 
         <ul>
           {
@@ -52,7 +52,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                     <span>{episode.durationAsString}</span>
                   </div>
 
-                  <button type='button'>
+                  <button type='button' onClick={() => play(episode)}>
                     <img src="/play-green.svg" alt="Tocar episódio"/>
                   </button>
                 </li>
