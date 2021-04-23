@@ -136,7 +136,7 @@
 
         background: var(--purple-400);
 
-        &:hover {
+        &:hover:not(:disabled) {
           filter: brightness(.95);
         }
 
