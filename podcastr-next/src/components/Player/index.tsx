@@ -25,7 +25,8 @@ export function Player() {
     playNext, 
     playPrevious,
     hasNext,
-    hasPrevious
+    hasPrevious,
+    clearPlayerState
   } = usePlayer()
 
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -52,6 +53,19 @@ export function Player() {
     audioRef.current.addEventListener('timeupdate', () => {
       setProgress(Math.floor(audioRef.current.currentTime))
     })
+  }
+
+  function handleSeek(amount: number) {
+    audioRef.current.currentTime = amount;
+    setProgress(amount);
+  }
+
+  function handleEpisodeEnded() {
+    if( hasNext ) {
+      playNext()
+    } else {
+      clearPlayerState()
+    }
   }
 
   return (
@@ -85,6 +99,7 @@ export function Player() {
                 trackStyle={{ backgroundColor: '#04d361'}}  
                 railStyle= {{ backgroundColor: '#9f75ff'}}
                 handleStyle= {{ borderColor: '#04d361', borderWidth: 4}}
+                onChange={handleSeek}
                 max={episode.duration}
                 value={progress}
 
@@ -102,6 +117,7 @@ export function Player() {
               src={episode.url}
               ref={audioRef}
               loop={isLooping}
+              onEnded={handleEpisodeEnded}
               autoPlay
               onPlay={() => setPlayingState(true)}
               onPause={() => setPlayingState(false)}
